@@ -3,7 +3,10 @@
 {% block title %}Create Task - My Django App{% endblock %}
 
 {% block content %}
+
 <div class="container mt-5">
+    <br>
+    <br>
     <h1 class="display-4 fw-bold text-center mb-4">Create New Task</h1>
     
     <!-- فرم ایجاد Task -->
@@ -48,6 +51,7 @@
                             {% endif %}
                         </div>
 
+                        <!-- فیلد Complete -->
                         <div class="mb-3 form-check">
                             {{ form.complete }}
                             <label for="{{ form.complete.id_for_label }}" class="form-check-label">Complete</label>

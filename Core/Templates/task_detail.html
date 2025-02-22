@@ -27,10 +27,10 @@
                     <!-- اطلاعات اضافی -->
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <strong>Owner:</strong> {{ task.owner.username }}
+                            <strong>Owner:</strong> {{ task.owner }}
                         </li>
                         <li class="list-group-item">
-                            <strong>Created Date:</strong> {{ task.created_date|date:"M d, Y" }}
+                            <strong>Created Date:</strong> {{ task.create_date|date:"M d, Y" }}
                         </li>
                         <li class="list-group-item">
                             <strong>Deadline:</strong> 

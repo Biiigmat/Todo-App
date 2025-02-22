@@ -4,6 +4,7 @@
 
 {% block content %}
 <div class="container mt-5">
+    <br>
     <h1 class="display-4 fw-bold text-center mb-4">Edit Task</h1>
     
     <!-- فرم ویرایش Task -->
@@ -69,7 +70,7 @@
                         <!-- دکمه‌های Submit و Cancel -->
                         <div class="d-flex justify-content-between">
                             <button type="submit" class="btn btn-primary">Update Task</button>
-                            <a href="{% url 'task_detail' task.id %}" class="btn btn-outline-secondary">Cancel</a>
+                            <a href="{% url 'task_detail' task.id %}" class="btn btn-outline-danger">Cancel</a>
                         </div>
                     </form>
                 </div>

@@ -29,9 +29,16 @@
                     <p class="card-text">{{ task.descriptions|truncatechars:100 }}</p>
                     <p class="card-text">
                         <small class="text-muted">
-                            Owner: {{ task.owner.username }}
+                            Owner: {{ task.owner }}
                             <br>
-                            Created date: {{ task.created_date|date:"M d, Y" }}
+                            Created date: {{ task.create_date|date:"M d, Y" }}
+                            <br>
+                            Deadline:
+                            {% if task.deadline %}
+                                {{ task.deadline|date:"M d, Y H:i" }}  <!-- نمایش تاریخ و زمان -->
+                            {% else %}
+                                No Deadline
+                            {% endif %}
                         </small>
                     </p>
                     <div class="d-flex justify-content-between align-items-center">

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Task Detail - My Django App{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="display-4 fw-bold text-center mb-4">Task Detail</h1>
+    
+    <!-- کارت نمایش جزئیات تسک -->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body">
+                    <!-- عنوان تسک -->
+                    <h2 class="card-title">{{ task.title }}</h2>
+
+                    <!-- تصویر تسک -->
+                    {% if task.image %}
+                        <img src="{{ task.image.url }}" alt="{{ task.title }}" class="img-fluid rounded mb-3">
+                    {% else %}
+                        <p class="text-muted">No Image</p>
+                    {% endif %}
+
+                    <!-- توضیحات تسک -->
+                    <p class="card-text">{{ task.descriptions }}</p>
+
+                    <!-- اطلاعات اضافی -->
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>Owner:</strong> {{ task.owner.username }}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Created Date:</strong> {{ task.created_date|date:"M d, Y" }}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Deadline:</strong> 
+                            {% if task.deadline %}
+                                {{ task.deadline|date:"M d, Y" }}
+                            {% else %}
+                                No Deadline
+                            {% endif %}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Status:</strong> 
+                            {% if task.completed %}
+                                <span class="badge bg-success">Completed</span>
+                            {% else %}
+                                <span class="badge bg-warning">Pending</span>
+                            {% endif %}
+                        </li>
+                    </ul>
+
+                    <!-- دکمه‌های ویرایش و بازگشت -->
+                    <div class="d-flex justify-content-between mt-4">
+                        <a href="#" class="btn btn-primary">
+                            ✏️ Edit Task
+                        </a>
+                        <a href="{% url 'task_list' %}" class="btn btn-outline-secondary">
+                            ↩️ Back to List
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

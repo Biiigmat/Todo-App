@@ -42,7 +42,7 @@
                         </li>
                         <li class="list-group-item">
                             <strong>Status:</strong> 
-                            {% if task.completed %}
+                            {% if task.complete %}
                                 <span class="badge bg-success">Completed</span>
                             {% else %}
                                 <span class="badge bg-warning">Pending</span>
@@ -52,7 +52,7 @@
 
                     <!-- دکمه‌های ویرایش و بازگشت -->
                     <div class="d-flex justify-content-between mt-4">
-                        <a href="#" class="btn btn-primary">
+                        <a href="{% url 'task_update' task.id %}" class="btn btn-primary">
                             ✏️ Edit Task
                         </a>
                         <a href="{% url 'task_list' %}" class="btn btn-outline-secondary">

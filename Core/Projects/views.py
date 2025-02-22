@@ -36,3 +36,18 @@ class TaskDetailViews (DetailView):
     #     return get_object_or_404(Task, pk=pk)
 
 
+class TaskUpdateViews (UpdateView):
+    model = Task
+    template_name = 'task_update.html'
+    context_object_name = 'task'
+    form_class = TaskForm
+    success_url = '/tasks/'
+
+
+class TaskDeleteViews (DeleteView):
+    model = Task
+    template_name = 'task_delete.html'
+    success_url = '/tasks/'
+    success_message = 'The Task has been successfully deleted :)'
+    context_object_name = 'task'
+

@@ -6,7 +6,7 @@ import admin_thumbnails
 @admin_thumbnails.thumbnail('image')
 class TaskAdmin(admin.ModelAdmin):
     model = Task
-    list_display = ('title', 'image')
+    list_display = ('title', 'image', 'complete','owner', )
     search_fields = ('title',)
     fieldsets = (
         ('', {

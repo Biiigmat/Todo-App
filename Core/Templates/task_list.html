@@ -9,7 +9,7 @@
     
     <!-- دکمه اضافه کردن Task جدید -->
     <div class="text-center mb-4">
-        <a href="{% url 'task_create' %}" class="btn btn-primary btn-lg">
+        <a href="{% url 'projects:task_create' %}" class="btn btn-primary btn-lg">
             ➕ Add New Task
         </a>
     </div>
@@ -47,16 +47,16 @@
                         {% else %}
                             <span class="badge bg-warning">Pending</span>
                         {% endif %}
-                        <a href="{% url 'task_detail' task.id %}" class="btn btn-sm btn-outline-primary">
+                        <a href="{% url 'projects:task_detail' task.id %}" class="btn btn-sm btn-outline-primary">
                             View Details
                         </a>
                     </div>
                     <!-- دکمه‌های Edit و Delete -->
                     <div class="d-flex justify-content-between mt-3">
-                        <a href="{% url 'task_update' task.id %}" class="btn btn-sm btn-outline-warning">
+                        <a href="{% url 'projects:task_update' task.id %}" class="btn btn-sm btn-outline-warning">
                             ✏️ Edit
                         </a>
-                        <a href="{% url 'task_delete' task.id %}" class="btn btn-sm btn-outline-danger">
+                        <a href="{% url 'projects:task_delete' task.id %}" class="btn btn-sm btn-outline-danger">
                             🗑️ Delete
                         </a>
                     </div>

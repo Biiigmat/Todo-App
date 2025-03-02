@@ -5,8 +5,14 @@
 {% block content %}
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="text-center">
+        <p class="lead text-muted">
+            {% if username %}
+                Hello {{ username }} !
+            {% else %}
+                Hello Guest !
+            {% endif %}
+        </p>
         <h1 class="display-4 fw-bold text-primary">Welcome to BIGMAT TODO  App!</h1>
-        <p class="lead text-muted">This is a simple and beautiful welcome message.</p>
         {% if user.is_authenticated %}
             <a href="#" class="btn btn-primary btn-lg mt-3">Get Started</a>
         {% else %}

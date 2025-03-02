@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import HomePageViews, TaskListViews, TaskCreateViews, TaskDetailViews, TaskUpdateViews, TaskDeleteViews
+app_name = 'projects'
 urlpatterns = [
     path('', HomePageViews.as_view(), name='home'),
     path('tasks/', TaskListViews.as_view(), name='task_list'),

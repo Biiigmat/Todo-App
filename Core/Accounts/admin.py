@@ -9,7 +9,7 @@ class UserAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Identifications ', {
             'fields': ('user_name', 'image', 'image_thumbnail', 'email',
-                       'first_name', 'last_name',)
+                       'password', 'first_name', 'last_name',)
         }),
 
         ('Permissions', {

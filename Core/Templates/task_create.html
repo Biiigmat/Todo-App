@@ -14,7 +14,7 @@
         <div class="col-md-8 col-lg-6">
             <div class="card shadow">
                 <div class="card-body">
-                    <form method="post" action="{% url 'task_create' %}" enctype="multipart/form-data">
+                    <form method="post" action="{% url 'projects:task_create' %}" enctype="multipart/form-data">
                         {% csrf_token %}
 
                         <!-- نمایش خطاهای فرم -->
@@ -72,7 +72,7 @@
                         <!-- دکمه‌های Submit و Cancel -->
                         <div class="d-flex justify-content-between">
                             <button type="submit" class="btn btn-primary">Create Task</button>
-                            <a href="{% url 'task_list' %}" class="btn btn-outline-secondary">Cancel</a>
+                            <a href="{% url 'projects:task_list' %}" class="btn btn-outline-secondary">Cancel</a>
                         </div>
                     </form>
                 </div>

@@ -52,10 +52,10 @@
 
                     <!-- دکمه‌های ویرایش و بازگشت -->
                     <div class="d-flex justify-content-between mt-4">
-                        <a href="{% url 'task_update' task.id %}" class="btn btn-primary">
+                        <a href="{% url 'projects:task_update' task.id %}" class="btn btn-primary">
                             ✏️ Edit Task
                         </a>
-                        <a href="{% url 'task_list' %}" class="btn btn-outline-secondary">
+                        <a href="{% url 'projects:task_list' %}" class="btn btn-outline-secondary">
                             ↩️ Back to List
                         </a>
                     </div>

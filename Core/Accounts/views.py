@@ -9,14 +9,17 @@ from .forms import UserLoginForm, UserRegisterForm
 
 
 class UserRegisterView(CreateView):
+    """
+    View to register new user
+    """
     template_name = 'user_register.html'
     form_class = UserRegisterForm
     success_url = reverse_lazy('projects:home')
 
     def form_valid(self, form):
-        user = form.save(commit=False)  # یوزر را ذخیره نکن
-        user.is_active = True  # یوزر را فعال کن
-        user.save()  # حالا ذخیره کن
+        user = form.save(commit=False)  # Getting user from Form
+        user.is_active = True  # Active user
+        user.save()  # Saving user
 
         email = form.cleaned_data.get('email')
         raw_password = form.cleaned_data.get('password1')

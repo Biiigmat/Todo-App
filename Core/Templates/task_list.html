@@ -7,14 +7,14 @@
 <div class="container mt-5">
     <h1 class="display-4 fw-bold text-center mb-4">Task List</h1>
     
-    <!-- دکمه اضافه کردن Task جدید -->
+
     <div class="text-center mb-4">
         <a href="{% url 'projects:task_create' %}" class="btn btn-primary btn-lg">
             ➕ Add New Task
         </a>
     </div>
 
-    <!-- لیست Tasks -->
+
     <div class="row">
         {% for task in tasks %}
         <div class="col-md-6 col-lg-4 mb-4">
@@ -35,7 +35,7 @@
                             <br>
                             Deadline:
                             {% if task.deadline %}
-                                {{ task.deadline|date:"M d, Y H:i" }}  <!-- نمایش تاریخ و زمان -->
+                                {{ task.deadline|date:"M d, Y H:i" }}
                             {% else %}
                                 No Deadline
                             {% endif %}

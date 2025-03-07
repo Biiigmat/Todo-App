@@ -7,7 +7,7 @@
     <br>
     <h1 class="display-4 fw-bold text-center mb-4">Edit Task</h1>
     
-    <!-- فرم ویرایش Task -->
+
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
             <div class="card shadow">
@@ -15,14 +15,14 @@
                     <form method="post" action="{% url 'projects:task_update' task.id %}" enctype="multipart/form-data">
                         {% csrf_token %}
 
-                        <!-- نمایش خطاهای فرم -->
+
                         {% if form.errors %}
                             <div class="alert alert-danger">
                                 <strong>Error!</strong> Please correct the errors below.
                             </div>
                         {% endif %}
 
-                        <!-- فیلد Title -->
+
                         <div class="mb-3">
                             <label for="{{ form.title.id_for_label }}" class="form-label">Title</label>
                             {{ form.title }}
@@ -31,7 +31,7 @@
                             {% endif %}
                         </div>
 
-                        <!-- فیلد Descriptions -->
+
                         <div class="mb-3">
                             <label for="{{ form.descriptions.id_for_label }}" class="form-label">Description</label>
                             {{ form.descriptions }}
@@ -40,7 +40,7 @@
                             {% endif %}
                         </div>
 
-                        <!-- فیلد Image -->
+
                         <div class="mb-3">
                             <label for="{{ form.image.id_for_label }}" class="form-label">Image</label>
                             {{ form.image }}
@@ -49,7 +49,7 @@
                             {% endif %}
                         </div>
 
-                        <!-- فیلد Deadline -->
+
                         <div class="mb-3">
                             <label for="{{ form.deadline.id_for_label }}" class="form-label">Deadline</label>
                             {{ form.deadline }}
@@ -58,7 +58,7 @@
                             {% endif %}
                         </div>
 
-                        <!-- فیلد Complete (تیک) -->
+
                         <div class="mb-3 form-check">
                             {{ form.completed }}
                             <label for="{{ form.completed.id_for_label }}" class="form-check-label">Completed</label>
@@ -67,7 +67,7 @@
                             {% endif %}
                         </div>
 
-                        <!-- دکمه‌های Submit و Cancel -->
+
                         <div class="d-flex justify-content-between">
                             <button type="submit" class="btn btn-primary">Update Task</button>
                             <a href="{% url 'projects:task_detail' task.id %}" class="btn btn-outline-danger">Cancel</a>

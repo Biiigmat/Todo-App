@@ -104,7 +104,7 @@
                 </li>
                 <li class="nav-item">
                     <br>
-                    Hello {{user.username}} !
+                    Hello {{user.user_name}} !
                     <a class="nav-link" href="{% url 'projects:task_list' %}">📂 My Projects</a>
                 </li>
                 <li class="nav-item">
@@ -114,10 +114,13 @@
 
                 <li class="nav-item">
                     <br>
-                    <a class="nav-link" href="#">📝 Sign Up</a>
+                    <a class="nav-link" href="#"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'user_login'%}">🔑 Login</a>
+                    <a class="nav-link" href="{% url 'user_login' %}">🔑 Login</a>
+                </li>
+            <li class="nav-item">
+                    <a class="nav-link" href="{% url 'user_register' %}">📝 Sign Up</a>
                 </li>
             {% endif %}
         </ul>

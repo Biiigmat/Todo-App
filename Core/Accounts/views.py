@@ -3,9 +3,29 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import views as auth_views, authenticate, login, logout
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView
-
+from django.views.generic.edit import CreateView
 from .models import User
-from .forms import UserLoginForm
+from .forms import UserLoginForm, UserRegisterForm
+
+
+class UserRegisterView(CreateView):
+    template_name = 'user_register.html'
+    form_class = UserRegisterForm
+    success_url = reverse_lazy('projects:home')
+
+    def form_valid(self, form):
+        user = form.save(commit=False)  # یوزر را ذخیره نکن
+        user.is_active = True  # یوزر را فعال کن
+        user.save()  # حالا ذخیره کن
+
+        email = form.cleaned_data.get('email')
+        raw_password = form.cleaned_data.get('password1')
+        user = authenticate(self.request, email=email, password=raw_password)
+
+        if user is not None:
+            login(self.request, user)
+
+        return redirect(self.success_url)
 
 
 class LoginUserView(LoginView):

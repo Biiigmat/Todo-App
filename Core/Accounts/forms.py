@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth import authenticate
 
 from .models import User
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 
 
 class UserLoginForm(AuthenticationForm):
@@ -28,4 +28,10 @@ class UserLoginForm(AuthenticationForm):
             if self.user_cache is None:
                 raise forms.ValidationError("Invalid email or password")
         return self.cleaned_data
+
+
+class UserRegisterForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'user_name', 'email', 'password1', 'password2']
 

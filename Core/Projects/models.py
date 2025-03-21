@@ -1,5 +1,6 @@
 from django.db import models
 from Accounts.models import User
+from django.urls import reverse
 
 
 class Task (models.Model):
@@ -12,3 +13,7 @@ class Task (models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
     last_update = models.DateTimeField(auto_now=True)
     deadline = models.DateTimeField(null=True, blank=True)
+
+    def get_absolute_url(self):
+        return reverse("projects:api_v1:task-detail", args=[self.id])
+

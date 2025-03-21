@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'Projects',
     'admin_thumbnails',
     'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [

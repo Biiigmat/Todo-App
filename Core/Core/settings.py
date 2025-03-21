@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'Accounts',
     'Projects',
     'admin_thumbnails',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

@@ -14,6 +14,6 @@ class Task (models.Model):
     last_update = models.DateTimeField(auto_now=True)
     deadline = models.DateTimeField(null=True, blank=True)
 
-    def get_absolute_url(self):
-        return reverse("projects:api_v1:task-detail", args=[self.id])
+    # def get_absolute_url(self):
+    #     return reverse("projects:api_v1:task-detail", args=[self.id])
 

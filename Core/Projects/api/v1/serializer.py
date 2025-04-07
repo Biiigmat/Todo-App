@@ -8,9 +8,10 @@ class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
         fields = ['id', 'title', 'owner', 'descriptions', 'image', 'complete',
-                  'absolute_url', 'create_date', 'last_update', 'deadline']
-    def get_abs_url(self, obj):
-        request = self.context.get('request')
-        return request.build_absolute_uri(reverse('task-detail', args=[obj.pk]))
+                  'absolute_url', 'create_date', 'last_update', 'deadline',]
+        read_only_fields = ['owner']
+
+
+
 
 

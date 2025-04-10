@@ -1,6 +1,8 @@
 import admin_thumbnails
 from django.contrib import admin
 from .models import User
+from django.contrib import admin
+from rest_framework.authtoken.models import Token
 
 
 @admin_thumbnails.thumbnail('image')
@@ -20,5 +22,5 @@ class UserAdmin(admin.ModelAdmin):
     ordering = ('user_name',)
 
 
-
+# admin.site.register(Token)
 admin.site.register(User, UserAdmin)
